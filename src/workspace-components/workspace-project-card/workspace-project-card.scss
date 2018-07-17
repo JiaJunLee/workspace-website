@@ -1,0 +1,198 @@
+@import "../../style/common";
+
+
+.project-card-container-bg-focus {
+  width: 140% !important;
+  height: 140% !important;
+  left: -20% !important;
+  top: -40% !important;
+}
+
+.project-card-container-bg-shadow {
+  width: 100%;
+  height: 100%;
+  transition: all .28s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-color: rgba(black, 0);
+}
+
+.project-card-container-bg-shadow-focus {
+  background-color: rgba(black, .46);
+}
+
+.project-card-container-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .28s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.close-button-card {
+  @extend %button_abstract;
+
+  .simple-project-content {
+    width: 84%;
+    height: 100%;
+    position: absolute;
+    padding: 0 8%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .simple-project-content-icon {
+      color: white;
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+    .simple-project-name {
+      font-size: 26px;
+      line-height: 34px;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .simple-project-remarks {
+      font-size: 20px;
+      text-align: center;
+      color: rgba(white, .6f);
+    }
+  }
+}
+
+.button-card {
+  @extend %button_abstract;
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background-color .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:hover {
+    background-color: #72d572;
+    .button-card-icon {
+      color: white;
+    }
+    .button-card-text {
+      color: white;
+    }
+  }
+
+  .button-card-icon {
+    font-size: 48px;
+    color: #546e7a;
+  }
+  .button-card-text {
+    margin-top: 24px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #546e7a;
+  }
+}
+
+.project-card-container {
+  width: 400px;
+  height: 350px;
+  box-shadow: 0 0 6px rgba(0,0,0,.25);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  transition: top .2s;
+  cursor: pointer;
+
+  &:hover {
+    top: -4px;
+  }
+
+  .project-card-content {
+    position: absolute;
+    bottom: -106px;
+    left: 0;
+    width: 100%;
+    height: 290px;
+    transition: bottom .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+      bottom: 0;
+    }
+
+    .visibility-tip {
+      background-color: #ff8a65;
+      color: white;
+      font-size: 20px;
+      width: 130px;
+      height: 30px;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+    }
+
+    .project-details-hover {
+      padding: 32px 36px !important;
+    }
+    .project-name-hover {
+      line-height: 34px !important;
+    }
+    .project-remarks-hover {
+      margin-top: 14px !important;
+    }
+    .details-summary-hover {
+      margin-top: 18px !important;
+    }
+
+    .project-details {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      padding: 14px 36px;
+      position: relative;
+      box-sizing: border-box;
+      transition: all .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      .project-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #546e7a;
+        line-height: 31px;
+        transition: all .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+        white-space: normal;
+        //word-break: break-all;
+      }
+
+      .project-remarks {
+        font-size: 18px;
+        margin-top: 8px;
+        color: #ff8a65;
+        transition: all .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .progress-bar-container {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      .details-summary {
+        margin-top: 14px;
+        display: inline-flex;
+        align-items: center;
+        transition: all .24s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        .summary-text {
+          margin-left: 10px;
+          margin-right: 16px;
+          font-size: 12px;
+          color: #bdbdbd;
+        }
+      }
+    }
+
+  }
+}
+

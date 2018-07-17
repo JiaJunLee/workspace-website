@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
+
+.disable {
+  pointer-events: none;
+  opacity: 0.6; }
+
+.miracles-button-box {
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer; }
+
+.zoom-enter-active {
+  transition: all .15s ease; }
+
+.zoom-leave-active {
+  transition: all 0.15s cubic-bezier(1, 0.5, 0.8, 1); }
+
+.zoom-enter, .zoom-leave-to {
+  transform: scale(0.3);
+  opacity: 0; }
+
+.miracles-button-box {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 3px;
+  box-sizing: border-box; }
+
+.miracles-button-text {
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; }
+
+.miracles-button-style-default {
+  padding: 5px 15px !important;
+  background-color: #FFF;
+  border: 1px solid #E0E0E0; }
+  .miracles-button-style-default:hover {
+    background-color: #F5F5F5; }
+  .miracles-button-style-default:active {
+    background-color: #E0E0E0; }
+  .miracles-button-style-default .miracles-button-text {
+    color: #757575; }
+
+.miracles-button-style-activity {
+  background-color: #2196F3; }
+  .miracles-button-style-activity:hover {
+    background-color: #42A5F5; }
+  .miracles-button-style-activity:active {
+    background-color: #1E88E5; }
+  .miracles-button-style-activity .miracles-button-text {
+    color: #FFF; }
+
+.miracles-button-style-primary {
+  background-color: #F44336; }
+  .miracles-button-style-primary:hover {
+    background-color: #EF5350; }
+  .miracles-button-style-primary:active {
+    background-color: #E53935; }
+  .miracles-button-style-primary .miracles-button-text {
+    color: #FFF; }
+
+.miracles-button-style-warning {
+  background-color: #FF9800; }
+  .miracles-button-style-warning:hover {
+    background-color: #FFA726; }
+  .miracles-button-style-warning:active {
+    background-color: #FB8C00; }
+  .miracles-button-style-warning .miracles-button-text {
+    color: #FFF; }
+
+.miracles-button-style-success {
+  background-color: #4CAF50; }
+  .miracles-button-style-success:hover {
+    background-color: #66BB6A; }
+  .miracles-button-style-success:active {
+    background-color: #43A047; }
+  .miracles-button-style-success .miracles-button-text {
+    color: #FFF; }
+
+.miracles-button-style-error {
+  background-color: #9E9E9E; }
+  .miracles-button-style-error:hover {
+    background-color: #BDBDBD; }
+  .miracles-button-style-error:active {
+    background-color: #757575; }
+  .miracles-button-style-error .miracles-button-text {
+    color: #FFF; }
+
+.miracles-button-text-small {
+  font-size: 10px; }
+
+.miracles-button-text-normal {
+  font-size: 14px; }
+
+.miracles-button-text-large {
+  font-size: 20px; }
+
+@keyframes miracles-button-loading-keyframes {
+  from {
+    -webkit-transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg); } }
+@-webkit-keyframes miracles-button-loading-keyframes {
+  from {
+    -webkit-transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg); } }
+@-moz-keyframes miracles-button-loading-keyframes {
+  from {
+    -webkit-transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg); } }
+@-ms-keyframes miracles-button-loading-keyframes {
+  from {
+    -webkit-transform: rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateZ(360deg); } }
+.miracles-button-light-loading-box {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
+  border-left-color: #FFF;
+  border-right-color: rgba(0, 0, 0, 0);
+  animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -webkit-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -moz-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -o-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal; }
+
+.miracles-button-deep-loading-box {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-top-color: #757575;
+  border-bottom-color: #757575;
+  border-left-color: #757575;
+  border-right-color: rgba(0, 0, 0, 0);
+  animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -webkit-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -moz-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal;
+  -o-animation: miracles-button-loading-keyframes 1s linear 0s infinite normal; }
+
+.miracles-button-icon {
+  margin-right: 6px; }
+
+/*# sourceMappingURL=miracles-button.css.map */

@@ -1,0 +1,63 @@
+@import "../../style/common";
+
+.ws-overview {
+  @extend %button_abstract;
+  width: 400px;
+  height: 210px;
+  box-shadow: 0 0 6px rgba(0,0,0,.25);
+  border-radius: 4px;
+  top: 0;
+  transition: top .2s;
+  position: relative;
+  &:hover {
+    top: -4px;
+  }
+
+  .ws-overview-header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 37px;
+    top: 25px;
+
+    .ws-overview-header-text {
+      margin-left: 16px;
+      color: white;
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+  }
+
+  .ws-overview-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ws-overview-container-text {
+      color: white;
+      font-size: 90px;
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.ws-overview-urgent {
+  background: linear-gradient(#e84e40, #f69988);
+}
+
+.ws-overview-active {
+  background: linear-gradient(#5c6bc0, #9fa8da);
+}
+
+.ws-overview-complete {
+  background: linear-gradient(#2baf2b, #72d572);
+}
+
+.ws-overview-overdue {
+  background: linear-gradient(#78909c, #b0bec5);
+}

@@ -1,0 +1,29 @@
+@mixin miracles-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.miracles-container-horizontal, .miracles-container-vertical {
+  @include miracles-container;
+}
+
+.miracles-container-horizontal-split {
+  @include miracles-container;
+  >:not(:first-child) {
+    border: 0 solid {
+      left-width: 3px;
+      left-color: red;
+    }
+  }
+}
+
+.miracles-container-vertical-split {
+  @include miracles-container;
+  >:not(:first-child) {
+    border: 0 solid {
+      top-width: 3px;
+      top-color: red;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../style/common";
+
+.ws-imagebox {
+  display: inline-block;
+  background-image: url('../../assets/img/css_sprites.png');
+  background-repeat: no-repeat;
+}
+
+.ws-imagebox-button {
+  @extend %button_abstract;
+}

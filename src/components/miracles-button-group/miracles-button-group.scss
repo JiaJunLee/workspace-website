@@ -1,0 +1,91 @@
+@import "../../style/common";
+
+@mixin miracles-button-group ($margin, $direction, $list: 'false') {
+  display: inline-flex;
+  flex-wrap: wrap;
+  @if( $margin == 0 ){
+    .miracles-button-box {
+      border-radius: 0 !important;
+    }
+  }
+  @if( $direction == 'horizontal' ){
+    >:not(:first-child) {
+      margin-left: $margin + px;
+      @if( $list == 'true' ){
+        border-left-width: 0;
+      }
+    }
+  }
+  @if ($direction == 'vertical' ){
+    >:not(:first-child) {
+      margin-top: $margin + px;
+      @if( $list == 'true' ){
+        border-top-width: 0;
+      }
+    }
+  }
+}
+
+
+.miracles-button-group-border {
+  border: 1px solid material_color('black-alpha-12') {
+    radius: 3px;
+  }
+  padding: 6px;
+}
+
+.miracles-button-group-small-horizontal-list {
+  @include miracles-button-group(6, 'horizontal', 'true')
+}
+
+.miracles-button-group-small-vertical-list {
+  @include miracles-button-group(6, 'vertical', 'true')
+}
+
+.miracles-button-group-small-horizontal {
+  @include miracles-button-group(6, 'horizontal')
+}
+
+.miracles-button-group-small-vertical {
+  @include miracles-button-group(6, 'vertical')
+}
+
+.miracles-button-group-large-horizontal-list {
+  @include miracles-button-group(30, 'horizontal', 'true')
+}
+
+.miracles-button-group-large-vertical-list {
+  @include miracles-button-group(30, 'vertical', 'true')
+}
+
+.miracles-button-group-large-horizontal {
+  @include miracles-button-group(30, 'horizontal')
+}
+
+.miracles-button-group-large-vertical {
+  @include miracles-button-group(30, 'vertical')
+}
+
+.miracles-button-group-normal-horizontal-list {
+  @include miracles-button-group(0, 'horizontal', 'true')
+}
+
+.miracles-button-group-normal-vertical-list {
+  @include miracles-button-group(0, 'vertical', 'true')
+}
+
+.miracles-button-group-normal-horizontal {
+  @include miracles-button-group(0, 'horizontal')
+}
+
+.miracles-button-group-normal-vertical {
+  @include miracles-button-group(0, 'vertical')
+}
+
+.miracles-button-group-direction-horizontal {
+  flex-direction: row;
+}
+
+.miracles-button-group-direction-vertical {
+  flex-direction: column;
+}

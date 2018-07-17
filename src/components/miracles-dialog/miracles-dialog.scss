@@ -1,0 +1,53 @@
+@import "../../style/common";
+
+.miracles-dialog {
+  @include user_select_disable;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: material_color('black-alpha-38');
+  z-index: 1000;
+
+  .miracles-dialog-container {
+    min-width: 19.6em;
+    padding: 1.3em;
+    background-color: material_color('white');
+    border-radius: 2px;
+    box-shadow: 0 12px 20px 0 rgba(black, 0.28);
+
+    .miracles-dialog-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .miracles-dialog-icon {
+        font-size: 18px;
+        margin-top: -2px;
+        margin-right: 0.55em;
+        color: material_color('black-alpha-54');
+      }
+      .miracles-dialog-title {
+        font-size: 17px;
+        letter-spacing: 0.85px;
+        color: material_color('black-alpha-54');
+      }
+    }
+
+    .miracles-dialog-message {
+      font-size: 14px;
+      margin-top: 0.85em;
+      color: material_color('black-alpha-38');
+    }
+
+    .miracles-dialog-bottom {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5em;
+    }
+  }
+}

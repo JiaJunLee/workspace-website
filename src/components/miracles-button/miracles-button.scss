@@ -1,0 +1,141 @@
+@import "../../style/common";
+
+$miracles-button-foreground-light-color: material_color('white');
+$miracles-button-foreground-deep-color: material_color('grey', '600');
+
+$miracles-button-background-color-map-default: (
+  'normal': $miracles-button-foreground-light-color,
+  'hover': material_color('grey', '100'),
+  'active': material_color('grey', '300'),
+  'border': material_color('grey', '300')
+);
+$miracles-button-background-color-name-activity: 'blue';
+$miracles-button-background-color-name-primary: 'red';
+$miracles-button-background-color-name-warning: 'orange';
+$miracles-button-background-color-name-success: 'green';
+$miracles-button-background-color-name-error: 'grey';
+
+@mixin miracles-button-style ($color-name) {
+  background-color: material_color($color-name, '500');
+  &:hover {
+    background-color: material_color($color-name, '400');
+  }
+  &:active {
+    background-color: material_color($color-name, '600');
+  }
+}
+
+.miracles-button-box {
+  @extend %button_abstract;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.miracles-button-text {
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.miracles-button-style-default {
+  padding: 5px 15px !important;
+  background-color: map_get($miracles-button-background-color-map-default, 'normal');
+  border: 1px solid map_get($miracles-button-background-color-map-default, 'border');
+  &:hover {
+    background-color: map_get($miracles-button-background-color-map-default, 'hover');
+  }
+  &:active {
+    background-color: map_get($miracles-button-background-color-map-default, 'active');
+  }
+  .miracles-button-text {
+    color: $miracles-button-foreground-deep-color;
+  }
+}
+.miracles-button-style-activity {
+  @include miracles-button-style($miracles-button-background-color-name-activity);
+  .miracles-button-text {
+    color: $miracles-button-foreground-light-color;
+  }
+}
+.miracles-button-style-primary {
+  @include miracles-button-style($miracles-button-background-color-name-primary);
+  .miracles-button-text {
+    color: $miracles-button-foreground-light-color;
+  }
+}
+.miracles-button-style-warning {
+  @include miracles-button-style($miracles-button-background-color-name-warning);
+  .miracles-button-text {
+    color: $miracles-button-foreground-light-color;
+  }
+}
+.miracles-button-style-success {
+  @include miracles-button-style($miracles-button-background-color-name-success);
+  .miracles-button-text {
+    color: $miracles-button-foreground-light-color;
+  }
+}
+.miracles-button-style-error {
+  @include miracles-button-style($miracles-button-background-color-name-error);
+  .miracles-button-text {
+    color: $miracles-button-foreground-light-color;
+  }
+}
+
+.miracles-button-text-small {
+  font-size: 10px;
+}
+
+.miracles-button-text-normal {
+  font-size: 14px;
+}
+
+.miracles-button-text-large {
+  font-size: 20px;
+}
+
+
+// Loading box
+@include create_keyframes('miracles-button-loading-keyframes') {
+  from{
+    -webkit-transform:rotateZ(0deg);
+  }
+  to{
+    -webkit-transform:rotateZ(360deg);
+  }
+}
+
+@mixin miracles-button-loading-box ($color) {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  margin-right: 8px;
+  border: {
+    radius: 50%;
+    width: 2px;
+    style: solid;
+    top-color: $color;
+    bottom-color: $color;
+    left-color: $color;
+    right-color: material_color('alpha');
+  };
+  @include add_animation('miracles-button-loading-keyframes', '1s');
+}
+
+.miracles-button-light-loading-box {
+  @include miracles-button-loading-box($miracles-button-foreground-light-color);
+}
+
+.miracles-button-deep-loading-box {
+  @include miracles-button-loading-box($miracles-button-foreground-deep-color);
+}
+
+// Icon
+.miracles-button-icon {
+  margin-right: 6px;
+}

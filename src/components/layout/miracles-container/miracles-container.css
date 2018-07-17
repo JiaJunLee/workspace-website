@@ -1,0 +1,24 @@
+.miracles-container-horizontal, .miracles-container-vertical {
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+
+.miracles-container-horizontal-split {
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+  .miracles-container-horizontal-split > :not(:first-child) {
+    border: 0 solid;
+      border-left-width: 3px;
+      border-left-color: red; }
+
+.miracles-container-vertical-split {
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+  .miracles-container-vertical-split > :not(:first-child) {
+    border: 0 solid;
+      border-top-width: 3px;
+      border-top-color: red; }
+
+/*# sourceMappingURL=miracles-container.css.map */

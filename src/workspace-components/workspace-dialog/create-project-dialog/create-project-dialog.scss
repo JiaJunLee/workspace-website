@@ -1,0 +1,147 @@
+@import "../../../style/common";
+
+.create-project-container-loading {
+  align-items: center;
+  justify-content: center;
+}
+
+.create-project-container {
+  width: 1064px;
+  min-height: 280px;
+  max-height: 560px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+  padding-top: 8px;
+
+  .project-template-loading {
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    border: {
+      left: 2px solid material_color('gray', '400');
+      top: 2px solid material_color('gray', '400');
+      right: 2px solid material_color('gray', '400');
+      bottom: 2px solid transparent;
+    };
+    border-radius: 30px;
+    @include add_animation('miracles-button-loading-keyframes', '1s');
+  }
+
+  .template-card {
+    @extend %button_abstract;
+    width: 245px;
+    height: 124px;
+    margin: 8px;
+    top: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 6px rgba(0,0,0,.25);
+
+    .template-card-bg-blank {
+      background-color: material_color('white');
+    }
+
+    .template-card-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      //background-image: url("../../../assets/img/create-project-dialog/300.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all .2s ease-in-out;
+    }
+    .template-card-shadow {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(black, .35f);
+      transition: all .2s ease-in-out;
+    }
+
+    .template-card-content {
+      width: 90%;
+      height: 100%;
+      padding: 0 5%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      .template-card-icon {
+        font-size: 22px;
+        margin-right: 12px;
+        margin-top: -2px;
+        color: material_color('grey') !important;
+      }
+
+      .template-card-name-blank {
+        color: material_color('grey') !important;
+      }
+
+      .template-card-name {
+        font-size: 15px;
+        color: white;
+        display: block;
+        transition: all .2s ease-in-out;
+      }
+
+      .template-card-remarks {
+        font-size: 13px;
+        color: white;
+        text-align: center;
+        line-height: 22px;
+        display: none;
+        transition: all .2s ease-in-out;
+      }
+
+    }
+
+    &:hover {
+      top: -4px;
+    }
+
+    &:hover .template-card-bg {
+      top: -15% !important;
+      left: -15% !important;
+      width: 130% !important;
+      height: 130% !important;
+    }
+
+    &:hover .template-card-content .template-card-icon {
+      color: white !important;
+    }
+
+    &:hover .template-card-bg-blank {
+      background-color: #72d572;
+    }
+
+    &:hover .template-card-shadow {
+      background-color: rgba(black, .68f) !important;
+    }
+
+    &:hover .template-card-content .template-card-name {
+      display: none;
+    }
+
+    &:hover .template-card-content .template-card-remarks {
+      display: block;
+    }
+
+  }
+}
+
+.create-project-details-container {
+  width: 420px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+}

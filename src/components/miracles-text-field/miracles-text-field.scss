@@ -1,0 +1,120 @@
+@import "../../style/common";
+
+.miracles-text-field {
+  position: relative;
+  padding: {
+    top: 12px;
+    bottom: 6px;
+  }
+}
+
+.miracles-text-field-label {
+  @include user_select_disable;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  color: material_color('black-alpha-38');
+  -webkit-transform: scale(1) translateY(24px);
+  transform-origin: left;
+  pointer-events: none;
+  transition: all .2s;
+  letter-spacing: 1px;
+}
+
+.miracles-text-field-label-focus {
+  -webkit-transform: scale(0.8) translateY(0px) !important;
+}
+
+.miracles-text-field-label-focus-default {
+  color: material_color('blue');
+}
+
+.miracles-text-field-label-focus-primary {
+  color: material_color('red');
+}
+
+.miracles-text-field-label-focus-warning {
+  color: material_color('orange');
+}
+
+.miracles-text-field-label-focus-success {
+  color: material_color('green');
+}
+
+.miracles-text-field-label-focus-error {
+  color: material_color('grey');
+}
+
+.miracles-text-field-label-has-value {
+  -webkit-transform: scale(0.82) translateY(0px) !important;
+}
+
+.miracles-text-field-label-error {
+  color: material_color('red') !important;
+  -webkit-transform: scale(0.82) translateY(0px) !important;
+}
+
+.miracles-text-field-input {
+  width: 100%;
+  height: 32px;
+  padding: 8px 0;
+  font-size: 16px;
+  background-color: transparent;
+  color: material_color('black-alpha-87');
+  border: none;
+  border-bottom: 1px solid material_color('black-alpha-54');
+  outline: 0;
+  cursor: pointer;
+  transition: all .2s;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  &:hover {
+    border-bottom: 1.5px solid material_color('black-alpha-54');
+  }
+}
+
+.miracles-text-field-input-has-value {
+  border-bottom: 1.5px solid material_color('black-alpha-54');
+}
+
+.miracles-text-field-input-error {
+  border-bottom: 1.5px solid material_color('red');
+  &:hover {
+    border-bottom: 1.5px solid material_color('red');
+  }
+}
+
+.miracles-text-field-input-focus-default {
+  border-bottom: 1.5px solid material_color('blue');
+  &:hover {
+    border-bottom: 1.5px solid material_color('blue');
+  }
+}
+
+.miracles-text-field-input-focus-primary {
+  border-bottom: 1.5px solid material_color('red');
+  &:hover {
+    border-bottom: 1.5px solid material_color('red');
+  }
+}
+
+.miracles-text-field-input-focus-warning {
+  border-bottom: 1.5px solid material_color('orange');
+  &:hover {
+    border-bottom: 1.5px solid material_color('orange');
+  }
+}
+
+.miracles-text-field-input-focus-success {
+  border-bottom: 1.5px solid material_color('green');
+  &:hover {
+    border-bottom: 1.5px solid material_color('green');
+  }
+}
+
+.miracles-text-field-input-focus-error {
+  border-bottom: 1.5px solid material_color('grey');
+  &:hover {
+    border-bottom: 1.5px solid material_color('grey');
+  }
+}

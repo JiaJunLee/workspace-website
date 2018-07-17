@@ -1,0 +1,24 @@
+@import "../../style/common";
+
+.ws-progress-bar-container {
+  height: 7px;
+  width: 100%;
+  background-color: material_color('blue-grey', '100');
+  display: inline-flex;
+}
+
+.ws-progress-bar {
+  height: 100%;
+}
+
+.ws-progress-bar-success {
+  background-color: material_color('green', '400');
+}
+
+.ws-progress-bar-active {
+  background-color: material_color('blue', '400');
+}
+
+.ws-progress-bar-dangerous {
+  background-color: material_color('red', '400');
+}

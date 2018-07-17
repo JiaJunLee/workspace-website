@@ -1,0 +1,11 @@
+@import "../../style/common";
+
+.dashboard-tip {
+  width: 100%;
+  color: #90a4ae;
+  font-size: 28px;
+  padding-top: 30px;
+  padding-bottom: 26px;
+  letter-spacing: 0.4px;
+  @extend %button_abstract;
+}

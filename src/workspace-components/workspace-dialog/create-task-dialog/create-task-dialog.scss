@@ -1,0 +1,12 @@
+.create-task-dialog-container {
+  display: flex;
+  flex-direction: column;
+
+  .inline-box {
+    margin-top: 12px;
+    display: inline-flex;
+  }
+  .text {
+    margin-right: 12px;
+  }
+}

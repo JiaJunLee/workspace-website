@@ -1,0 +1,73 @@
+@import "../../style/common";
+
+.miracles-loading-box {
+  @include user_select_disable;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+
+  .miracles-loading-container {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    .miracles-loading-item {
+      width: 0.5em;
+      height: 3em;
+      background-color: material_color('white');
+    }
+    :nth-child(1) {
+      @include add_animation('loading-keyframes', '0.25s', 'linear', '-0.16s', 'infinite', 'alternate')
+    }
+    :nth-child(2) {
+      @include add_animation('loading-keyframes', '0.25s', 'linear', '-0.12s', 'infinite', 'alternate')
+    }
+    :nth-child(3) {
+      @include add_animation('loading-keyframes', '0.25s', 'linear', '-0.08s', 'infinite', 'alternate')
+    }
+    :nth-child(4) {
+      @include add_animation('loading-keyframes', '0.25s', 'linear', '-0.04s', 'infinite', 'alternate')
+    }
+    :nth-child(5) {
+      @include add_animation('loading-keyframes', '0.25s', 'linear', '0s', 'infinite', 'alternate')
+    }
+    :not(:first-child) {
+      margin-left: 0.3em;
+    }
+  }
+  .miracles-loading-text-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    .miracles-loading-text {
+      color: rgba(white, .42);
+      font-size: 1em;
+      margin-bottom: 6.6em;
+    }
+  }
+}
+
+.miracles-loading-shadow {
+  background-color: rgba(0,0,0,.7)
+}
+
+@include create_keyframes('loading-keyframes') {
+  from {
+    height: 0.8em;
+  }
+  to {
+    height: 3em;
+  }
+}
+
+

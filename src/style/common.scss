@@ -1,0 +1,103 @@
+@import "material-colors";
+
+@function material_color($color_name, $color_shade: '500'){
+  // check color exists
+  @if( map_has_key($material-colors, $color_name) == false ){
+    @warn 'Color `#{$color_name}`is not exists!';
+    @return null;
+  }
+  // get color map
+  $color_map: map_get($material-colors, $color_name);
+  @if( type_of($color_map) == 'map'){
+    // check color shade exists
+    @if( map_has_key($color_map, $color_shade) == false ){
+      @warn 'Color `#{$color_name}` shade `#{$color_shade}` is not exists';
+      @return null;
+    }
+    // return color
+    @return map_get($color_map, $color_shade)
+  }
+  @return $color_map
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@mixin user_select_disable {
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+@mixin create_keyframes($keyframes_name){
+  @keyframes #{$keyframes_name} { @content }
+  @-webkit-keyframes #{$keyframes_name} { @content }
+  @-moz-keyframes #{$keyframes_name} { @content }
+  @-ms-keyframes #{$keyframes_name} { @content }
+}
+
+@mixin add_animation($animation_name, $animation_duration, $animation_function: 'linear', $animation_delay: '0s', $animation_count: 'infinite', $animation_direction: 'normal') {
+  animation: unquote($animation_name) unquote($animation_duration) unquote($animation_function) unquote($animation_delay) unquote($animation_count) unquote($animation_direction);
+  -webkit-animation: unquote($animation_name) unquote($animation_duration) unquote($animation_function) unquote($animation_delay) unquote($animation_count) unquote($animation_direction);
+  -moz-animation: unquote($animation_name) unquote($animation_duration) unquote($animation_function) unquote($animation_delay) unquote($animation_count) unquote($animation_direction);
+  -o-animation: unquote($animation_name) unquote($animation_duration) unquote($animation_function) unquote($animation_delay) unquote($animation_count) unquote($animation_direction);
+}
+
+%button_abstract {
+  @include user_select_disable;
+  cursor: pointer;
+}
+
+.zoom-enter-active {
+  transition: all .15s ease;
+}
+.zoom-leave-active {
+  transition: all .15s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.zoom-enter, .zoom-leave-to {
+  transform: scale(.3);
+  opacity: 0;
+}
+
+
+.slide-fade-enter-active {
+  transition: all .15s ease;
+}
+.slide-fade-leave-active {
+  transition: all .15s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+// scroll bar
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 16px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-track
+{
+  border-radius: 3px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.22);
+}

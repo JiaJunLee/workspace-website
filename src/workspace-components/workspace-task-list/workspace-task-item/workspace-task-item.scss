@@ -1,0 +1,132 @@
+@import "../../../style/common";
+
+.create-task-item-container {
+  @extend %button_abstract;
+  width: 100%;
+  padding: {
+    top: 10px;
+    bottom: 20px;
+  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon-box {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 25px;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,.45);
+    }
+
+    .icon {
+      margin-top: -5px;
+      margin-left: -5px;
+      font-size: 55px;
+      color: material_color('blue');
+    }
+  }
+}
+
+.task-item-disable {
+  background-color: material_color('blue-grey', '200') !important;
+}
+
+.task-item-container {
+  @extend %button_abstract;
+
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  position: relative;
+  top: 0;
+  transition: all .15s ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    top: -3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+
+  .task-item-type {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all .15s ease-in-out;
+  }
+
+  .task-item-type-default {
+    background-color: transparent;
+  }
+
+  .task-item-type-warning {
+    background-color: material_color('orange')
+  }
+
+  .task-item-type-primary {
+    background-color: material_color('red');
+  }
+
+  .task-item-type-close {
+    background-color: material_color('blue-grey');
+  }
+
+  &:hover .task-item-type {
+    width: 5px;
+  }
+
+  .task-box {
+
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: material_color('blue-grey', '100');
+      flex-shrink: 0;
+      margin-right: 15px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content {
+      width: 100%;
+      margin-top: 6px;
+      display: inline-flex;
+      flex-direction: column;
+
+      .text {
+        white-space: normal;
+        font-size: 15px;
+        color: material_color('grey', '600');
+        line-height: 22px;
+      }
+
+      .tips {
+        width: 100%;
+        margin-top: 6px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+    }
+  }
+
+}
+
